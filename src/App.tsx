@@ -1,13 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Navbar } from './components/Navbar'
 import { TodoForm } from './components/TodoForm'
 
 const App: React.FC = () => {
+  const [todos, setTodos] = useState([])
+
+  const addHandler = (title: string) => {
+    console.log('add new todo', title)
+  }
+
   return (
     <Fragment>
       <Navbar />
       <div className="container">
-        <TodoForm />
+        <TodoForm onAdd={addHandler} />
       </div>
     </Fragment>
   )
