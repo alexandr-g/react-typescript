@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Navbar: React.FunctionComponent = () => (
   <nav>
-    <div className="nav-wrapper">
-      <a href="#" className="brand-logo">
+    <div className="nav-wrapper cyan darken-1 px1">
+      <a href="/" className="brand-logo">
         React + TypeScript
       </a>
       <ul className="right hide-on-med-and-down">
