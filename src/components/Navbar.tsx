@@ -17,5 +17,3 @@ export const Navbar: React.FunctionComponent = () => (
     </div>
   </nav>
 )
-
-export default Navbar
