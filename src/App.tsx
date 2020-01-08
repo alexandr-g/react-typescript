@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
 import { Navbar } from './components/Navbar'
 import { TodoForm } from './components/TodoForm'
@@ -9,6 +9,11 @@ declare var confirm: (question: string) => boolean
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<ITodo>>([])
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItems('todos') || '[]') as ITodo[]
+    setTodos(saved)
+  }, [])
 
   const addHandler = (title: string) => {
     const newTodo: ITodo = {
