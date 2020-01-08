@@ -30,7 +30,9 @@ const App: React.FC = () => {
     )
   }
 
-  const removeHandler = (id: number) => {}
+  const removeHandler = (id: number) => {
+    setTodos(prev => prev.filter(todo => todo.id !== id))
+  }
 
   return (
     <Fragment>
