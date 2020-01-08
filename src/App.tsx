@@ -15,7 +15,7 @@ const App: React.FC = () => {
       completed: false
     }
 
-    setTodos([newTodo, ...todos])
+    setTodos(prev => [newTodo, ...prev])
   }
 
   return (
