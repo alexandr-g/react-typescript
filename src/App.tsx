@@ -5,6 +5,8 @@ import { TodoForm } from './components/TodoForm'
 import { TodoList } from './components/TodoList'
 import { ITodo } from './interfaces'
 
+declare var confirm: (question: string) => boolean
+
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<ITodo>>([])
 
@@ -31,9 +33,7 @@ const App: React.FC = () => {
   }
 
   const removeHandler = (id: number) => {
-    const shouldRemove = window.confirm(
-      'Are you sure you want to delete the todo?'
-    )
+    const shouldRemove = confirm('Are you sure you want to delete this todo?')
 
     if (shouldRemove) {
       setTodos(prev => prev.filter(todo => todo.id !== id))
