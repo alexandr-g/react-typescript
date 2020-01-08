@@ -16,7 +16,6 @@ export const TodoForm: React.FC<TodoFormProps> = props => {
     if (event.key === 'Enter') {
       props.onAdd(ref.current!.value)
       ref.current!.value = ''
-      //   console.log('pressed', title)
       //   setTitle('')
     }
   }
